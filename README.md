@@ -1,4 +1,4 @@
-<h1 align="center">Pre-Entrega 1 JS - Mateo Leotta Meier - Coderhouse</h1>
+<h1 align="center">Pre-Entrega 2 JS - Mateo Leotta Meier - Coderhouse</h1>
 
 ## Autor / Author - Mateo Leotta Meier
 Pre-Entrega 1 del proyecto final del curso de JavaScript de Coderhouse.
