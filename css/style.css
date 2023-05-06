@@ -1,0 +1,720 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+@font-face {
+  font-family: 'Gotham', sans-serif;
+  src: url("../assets/fonts/gotham-bold.ttf") format("truetype");
+  font-weight: normal; }
+
+header {
+  width: 100%;
+  overflow: hidden;
+  position: relative; }
+  header .arrow {
+    width: 50px;
+    height: 50px; }
+    header .arrow:hover {
+      filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
+      transition: 0.4s; }
+
+.container-fluid {
+  padding: 0; }
+
+.navbar-expand-lg {
+  padding: 0; }
+
+.navBarMini {
+  width: 100%;
+  display: flex; }
+  .navBarMini .containerMini {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 75px; }
+  .navBarMini li {
+    width: 235px;
+    height: 180px;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    list-style: none; }
+    .navBarMini li a {
+      display: inline-block;
+      font-size: 40px;
+      font-family: "DM Serif Display", serif;
+      font-weight: bold;
+      text-decoration: none;
+      color: black;
+      letter-spacing: 0.10rem; }
+      .navBarMini li a:hover {
+        text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+        transition: 0.4s; }
+
+.navBar {
+  width: 100%;
+  display: flex; }
+
+.navbar-nav {
+  width: 100%;
+  height: 525px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center; }
+
+.nav-item {
+  width: 180px;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  list-style: none; }
+
+.nav-link {
+  display: inline-block;
+  text-decoration: none;
+  color: black;
+  font-family: "DM Serif Display", serif;
+  font-weight: normal;
+  font-size: 40px;
+  letter-spacing: 0.10rem; }
+  .nav-link:hover {
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+    transition: 0.4s; }
+
+.navbar-toggler-icon {
+  background-image: url(../assets/img/hamburguer.png);
+  width: 50px;
+  height: 50px; }
+
+.point {
+  width: 20px;
+  height: 20px; }
+
+ol, ul {
+  padding: 0; }
+
+video {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translateX(calc((100% - 100vw) / 2));
+  z-index: -2; }
+
+body {
+  background-color: #f4f1e9a1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; }
+
+div.info {
+  display: flex;
+  overflow: hidden;
+  margin: 1%;
+  align-items: center; }
+
+div.container-fluid {
+  display: flex;
+  flex-wrap: inherit;
+  align-items: center;
+  justify-content: space-between; }
+
+div .song {
+  width: 100%;
+  overflow: hidden;
+  box-shadow: 0 0 5px black;
+  align-self: center;
+  margin: 1%; }
+
+div .ownsong {
+  width: 220px;
+  height: 220px;
+  box-shadow: 0 0 5px black; }
+
+div .amuse:hover {
+  box-shadow: 0 0 5px black;
+  transition: 0.4s; }
+
+div .flyer {
+  width: 100%;
+  overflow: hidden;
+  box-shadow: 0 0 5px black; }
+
+div .concertData {
+  display: flex;
+  flex-flow: column wrap;
+  align-self: flex-end; }
+
+div .foto {
+  box-shadow: 0 0 5px black;
+  width: 100%;
+  overflow: hidden;
+  align-self: center; }
+
+div .fotoGaleria {
+  width: 100%;
+  box-shadow: 0 0 5px black; }
+
+div .title {
+  text-align: center;
+  margin: 1%; }
+
+.arrowContainer {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; }
+
+.arrowImg {
+  width: 50px;
+  height: 50px; }
+
+main {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center; }
+
+section {
+  width: 100%; }
+  section .container6 {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center; }
+  section .container3 {
+    display: flex;
+    flex-flow: column wrap; }
+  section .mainTitle {
+    font-size: 30px;
+    font-family: "Raleway", sans-serif;
+    font-weight: lighter;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    margin-top: 4%; }
+  section .title {
+    text-align: center;
+    margin: 1%;
+    margin-left: auto;
+    margin-right: auto; }
+
+.new {
+  width: 100%;
+  overflow: hidden; }
+  .new .container4 {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center; }
+  .new .container5 {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center; }
+  .new .title {
+    margin-bottom: 0; }
+
+.songsBox1, .songsBox12, .songsBox13 {
+  background: rgba(202, 202, 202, 0.5);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(202, 202, 202, 0.3);
+  display: flex;
+  flex-flow: column wrap;
+  overflow: hidden;
+  align-items: flex-start;
+  padding: 4%;
+  margin: 5%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 40px;
+  margin-top: 30px;
+  width: 90%; }
+
+.concertBox {
+  background: rgba(202, 202, 202, 0.5);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(202, 202, 202, 0.3);
+  display: flex;
+  flex-flow: wrap nowrap;
+  justify-content: space-evenly;
+  overflow: hidden;
+  padding: 4%;
+  margin: 5%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 40px;
+  margin-top: 30px;
+  width: 90%; }
+
+.concert1, .concert2, .concert3 {
+  display: flex;
+  flex-flow: row wrap;
+  overflow: hidden; }
+
+.concertImg1, .concertImg2, .concertImg3 {
+  width: 29%;
+  overflow: hidden;
+  margin: 3%; }
+
+.concertData1, .concertData2, .concertData3 {
+  width: 65%;
+  overflow: hidden; }
+
+.concerts {
+  background: rgba(202, 202, 202, 0.5);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(202, 202, 202, 0.3);
+  margin: 5%;
+  padding: 3%; }
+
+.songsBox12 {
+  align-items: center; }
+
+.songsBox13 {
+  align-items: center;
+  margin-top: 2%; }
+
+.songsBox2 {
+  background: rgba(202, 202, 202, 0.5);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(202, 202, 202, 0.3);
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  overflow: hidden;
+  padding: 3%;
+  padding-top: 1%;
+  margin: 2%;
+  margin-bottom: 45px;
+  width: 97%; }
+  .songsBox2 .videoTitle {
+    font-size: 30px;
+    margin-bottom: 1%;
+    text-align: center; }
+
+.container4 .noSiente {
+  display: flex;
+  justify-content: flex-end; }
+
+.amuse {
+  width: 220px;
+  height: 220px;
+  display: block;
+  margin: 2%;
+  margin-left: 1%; }
+
+.galeriaFotos {
+  background: rgba(202, 202, 202, 0.5);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(202, 202, 202, 0.3);
+  overflow: hidden;
+  padding: 1%;
+  margin: 1%;
+  margin-bottom: 45px;
+  width: 98%; }
+  .galeriaFotos .marginFoto {
+    margin: 1%; }
+
+a {
+  text-decoration: none; }
+  a .logo2 {
+    width: 235px;
+    height: 180px;
+    margin-top: 10px; }
+    a .logo2:hover {
+      filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
+      transition: 0.4s; }
+  a .logo {
+    width: 180px;
+    height: 140px; }
+    a .logo:hover {
+      filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
+      transition: 0.4s; }
+  a .socialMedia {
+    width: 55px;
+    height: 55px;
+    padding: 5%; }
+  a .popup {
+    width: 100%;
+    overflow: hidden; }
+    a .popup:hover {
+      box-shadow: 0 0 5px black;
+      transition: 0.4s; }
+
+.logo2 {
+  width: 235px;
+  height: 180px; }
+
+.logo {
+  width: 235px;
+  height: 180px; }
+
+p {
+  font-family: "Raleway", sans-serif;
+  font-size: 18px;
+  font-weight: regular;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  text-align: justify; }
+  p .songdesc {
+    margin: 3%; }
+
+h1 {
+  font-size: 30px;
+  font-family: "Raleway", sans-serif;
+  font-weight: normal;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5); }
+
+.titleGracias {
+  font-family: "DM Serif Display", serif !important;
+  font-weight: bold;
+  font-size: 50px;
+  padding: 1%;
+  margin: 1%; }
+
+.titleGracias2 {
+  font-size: 30px;
+  padding: 1%;
+  margin: 1%; }
+
+article {
+  width: 100%;
+  overflow: hidden; }
+
+h2 {
+  font-family: "Raleway", sans-serif;
+  font-size: 40px;
+  font-weight: bold;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  width: 100%;
+  overflow: hidden; }
+
+h3 {
+  font-family: "Raleway", sans-serif;
+  font-size: 25px;
+  font-weight: medium;
+  margin-left: auto; }
+
+.galedesc {
+  margin: 2%;
+  font-size: 15px;
+  text-align: justify; }
+
+fieldset {
+  background: rgba(202, 202, 202, 0.5);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(202, 202, 202, 0.3);
+  display: flex;
+  flex-flow: column wrap;
+  overflow: auto;
+  padding: 3%;
+  padding-top: 1%;
+  margin: 1%;
+  width: 90%;
+  margin-top: 30px;
+  margin-bottom: 5%;
+  margin-left: auto;
+  margin-right: auto; }
+
+textarea {
+  width: 100%;
+  font-family: "Raleway", sans-serif;
+  font-size: 15px;
+  font-weight: lighter;
+  margin: 1%;
+  padding: 1%;
+  max-height: 200px;
+  min-height: 200px; }
+
+span {
+  font-family: "Raleway", sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  margin: 1%;
+  margin-right: 0;
+  padding-top: 1%;
+  align-self: flex-start; }
+
+input {
+  width: 100%;
+  margin: 1%;
+  font-family: "Raleway", sans-serif;
+  font-size: 15px;
+  font-weight: lighter;
+  padding: 1%; }
+
+form .button {
+  width: 40%;
+  margin-bottom: 25px; }
+
+form .label {
+  display: flex;
+  flex-direction: column; }
+
+form .labelArea {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  padding-right: 2%; }
+
+iframe {
+  width: 100%;
+  box-shadow: 0 0 10px black; }
+
+.playlist {
+  width: 90%;
+  box-shadow: none;
+  overflow: auto;
+  display: flex;
+  box-shadow: 0 0 10px black; }
+
+.playlistContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5%; }
+
+footer {
+  width: 100%;
+  overflow: hidden;
+  background-color: none;
+  margin-top: auto; }
+
+.container2 {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  padding-top: 16px; }
+  .container2 li {
+    padding-top: 1%;
+    padding-bottom: 1%;
+    list-style: none; }
+    .container2 li a:hover {
+      filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
+      transition: 0.4s; }
+
+h5 {
+  text-align: center;
+  padding-bottom: 20px; }
+
+.navbar > .container, .navbar > .container-fluid, .navbar > .container-lg, .navbar > .container-md, .navbar > .container-sm, .navbar > .container-xl, .navbar > .container-xxl {
+  display: flex;
+  flex-wrap: inherit;
+  align-items: center;
+  justify-content: center; }
+
+button.navbar-toggler {
+  background-color: none;
+  border: none; }
+
+button.btn.btn-light {
+  margin-top: 0;
+  margin-right: 0;
+  font-family: "Raleway", sans-serif;
+  font-weight: medium; }
+
+@media (min-width: 0px) {
+  a .logo {
+    display: none; } }
+
+@media (min-width: 250px) {
+  .container4 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    flex-wrap: wrap-reverse; }
+    .container4 .noSiente {
+      display: flex;
+      justify-content: center;
+      flex-flow: column wrap; }
+  .amuse {
+    margin: 3%;
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto; }
+  .songsBox2 {
+    padding: 2%;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto; }
+  .ytb {
+    height: 180px; } }
+
+@media (max-width: 360px) {
+  .nav-link {
+    font-size: 25px; }
+  .titleGracias {
+    font-size: 35px; }
+  .titleGracias2 {
+    font-size: 25px; } }
+
+@media (min-width: 400px) {
+  .ytb {
+    height: 210px; } }
+
+@media (max-width: 470px) {
+  h2 {
+    font-size: 25px; } }
+
+@media (min-width: 506px) {
+  .info {
+    height: 45px; } }
+
+@media (min-width: 665px) {
+  .amuse {
+    margin: 1%;
+    margin-right: 3%; }
+  .ytb {
+    height: 300px; }
+  .galedesc {
+    font-size: 18px; }
+  .songsBox1, .songsBox12, .songsBox13 {
+    flex-flow: row nowrap; }
+  .songsBox13 {
+    flex-flow: column wrap; } }
+
+@media (min-width: 790px) {
+  fieldset {
+    height: 700px; } }
+
+@media (max-width: 991.5px) {
+  .point {
+    display: none; }
+  .songsBox1, .songsBox12, .songsBox13 {
+    margin-top: 5%; }
+  .nav-item {
+    width: 80%;
+    overflow: hidden;
+    margin: 0;
+    justify-content: flex-start; }
+  .navbar-nav {
+    justify-content: flex-start; }
+  p {
+    font-size: 20px; } }
+
+@media (min-width: 991.5px) {
+  header {
+    height: 600 px; }
+  .nav-item {
+    justify-content: center; }
+  a .logo2 {
+    display: none; }
+  a .logo {
+    display: flex; }
+  .navbar-nav {
+    justify-content: space-around; }
+  .nav-link {
+    font-size: 1.5rem; }
+  .container4 .noSiente {
+    display: flex;
+    justify-content: flex-end; }
+  .ytb {
+    height: 450px; }
+  form .label {
+    flex-direction: row; }
+  fieldset {
+    height: 600px; }
+  div.info {
+    height: 55px; }
+  span {
+    font-size: 20px; }
+  .galeriaFotos {
+    display: grid;
+    grid-template-columns: 4;
+    grid-template-rows: 4;
+    grid-template-areas: "img1 img1 img3 img3" "img2 img2 img3 img3" "img4 img4 img4 img4" "none none none none"; }
+  .img1 {
+    grid-area: img1; }
+  .img2 {
+    grid-area: img2; }
+  .img3 {
+    grid-area: img3; }
+  .img4 {
+    grid-area: img4; }
+  .galedesc {
+    font-size: 25px; }
+  h1 {
+    font-size: 35px; }
+  .titleGracias2 {
+    font-size: 40px; }
+  .playlistContainer {
+    padding-top: 3%; } }
+
+@media (min-width: 1218px) {
+  fieldset {
+    height: 600px; }
+  .songsBox12 {
+    flex-flow: row nowrap; } }
+
+@media (max-width: 1300px) {
+  .songsBox12 {
+    flex-flow: column wrap; } }
+
+@media (min-width: 1300px) {
+  a .logo {
+    width: 235px;
+    height: 180px; }
+  .logo {
+    width: 235px;
+    height: 180px; }
+  .navbar-nav {
+    justify-content: space-around; }
+  .nav-item {
+    width: 235px; }
+  .nav-link {
+    font-size: 2.1rem; }
+  .new .container4 {
+    flex-flow: row; }
+  .ytb {
+    height: 600px; }
+  fieldset {
+    height: 720px; }
+  .songsBox12 {
+    flex-flow: row nowrap;
+    align-items: flex-start; }
+  .songsBox13 {
+    flex-flow: row nowrap; }
+  .foto {
+    margin-right: 1%; }
+  .playlist {
+    width: 95%; }
+  .playlistContainer {
+    padding-top: 0; } }
+
+@media (min-width: 1600px) {
+  p {
+    font-size: 20px; } }

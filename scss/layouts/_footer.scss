@@ -1,0 +1,30 @@
+footer {
+	width: 100%;
+	overflow: hidden;
+	background-color: none;
+	margin-top: auto;
+}
+.container2 {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	gap: 25px;
+	padding-top: 16px;
+	li {
+		padding-top: 1%;
+		padding-bottom: 1%;
+		list-style: none;
+		a {
+			&:hover {
+				filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
+				transition: 0.4s;
+			}
+		}
+	}
+}
+h5{
+	text-align: center;
+	padding-bottom: 20px;
+}

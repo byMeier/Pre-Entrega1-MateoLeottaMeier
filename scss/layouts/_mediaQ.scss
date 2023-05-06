@@ -1,0 +1,263 @@
+    @media (min-width:0px){
+        a {
+        .logo {
+            display: none;
+        }
+        }
+    }   
+
+    @media (min-width:250px){
+        .container4 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            overflow: hidden;
+            flex-wrap: wrap-reverse;
+            .noSiente {
+                display: flex;
+                justify-content: center;
+                flex-flow: column wrap;
+            }
+        }
+        .amuse {
+            margin: 3%;
+            margin-top: 5%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .songsBox2 {
+            padding: 2%;
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .ytb {
+            height: 180px;
+        }
+	}
+
+    @media(max-width:360px) {
+        .nav-link{
+            font-size: 25px;
+        }
+        .titleGracias{
+            font-size: 35px;
+        }
+        .titleGracias2{
+            font-size: 25px;
+        }
+    }
+
+    @media(min-width:400px) {
+        .ytb {
+            height: 210px;
+        }
+    }
+
+    @media(max-width:470px) {
+        h2{
+            font-size: 25px;
+        }
+    }
+
+    @media (min-width:506px) {
+        .info{
+            height: 45px;
+        }
+    }
+
+    @media (min-width:665px){
+    
+        .amuse{
+            margin: 1%;
+            margin-right: 3%;
+        }
+        .ytb {
+            height: 300px;
+        }
+        .galedesc{
+            font-size: 18px;
+        }
+        .songsBox1{
+            flex-flow: row nowrap;
+        }        
+        .songsBox13{
+            flex-flow: column wrap;
+        }      
+    }
+
+    @media (min-width:790px){
+        fieldset{
+            height: 700px;
+        }
+    }
+
+    @media (max-width:991.5px){
+        .point{
+            display: none;
+        }
+        .songsBox1{
+            margin-top: 5%;
+        }
+        .nav-item {
+            width: 80%;
+            overflow: hidden;
+            margin: 0;
+            justify-content: flex-start;
+        }
+        .navbar-nav{
+            justify-content: flex-start;
+        }
+        p{
+            font-size: 20px;
+        }
+    }
+
+    @media(min-width:991.5px) {
+        header{
+            height: 600 px;
+        }
+        .nav-item {
+            justify-content: center;
+        }
+        a {
+            .logo2 {
+                display: none;
+            }
+            .logo {
+                display: flex;
+            }
+        }
+        .navbar-nav {
+            justify-content: space-around;
+        }
+        .nav-link{
+            font-size: 1.5rem;
+        }
+        .container4 {
+            .noSiente {
+                display: flex;
+                justify-content: flex-end;
+            }
+        }
+        .ytb {
+            height: 450px;
+        }
+        form {
+            .label {
+                flex-direction: row;
+            }
+        }
+        fieldset {
+            height: 600px;
+        }
+        div {
+            &.info {
+                height: 55px;
+            }
+        }
+        span {
+            font-size: 20px;
+        }
+        .galeriaFotos {
+            display: grid;
+            grid-template-columns: 4;
+            grid-template-rows: 4;
+            grid-template-areas: "img1 img1 img3 img3"
+                "img2 img2 img3 img3"
+                "img4 img4 img4 img4"
+                "none none none none";
+        }
+        .img1 {
+            grid-area: img1;
+        }
+        .img2 {
+            grid-area: img2;
+        }
+        .img3 {
+            grid-area: img3;
+        }
+        .img4 {
+            grid-area: img4;
+        }
+        .galedesc {
+            font-size: 25px;
+        }
+        h1{
+            font-size: 35px;
+        }    
+        .titleGracias2{
+            font-size: 40px;
+        }
+        .playlistContainer{
+            padding-top: 3%;
+        }
+    }
+
+    @media (min-width:1218px){
+        fieldset{
+            height: 600px;
+        }
+        .songsBox12{
+            flex-flow: row nowrap;
+        }
+    }
+
+    @media(max-width:1300px){
+        .songsBox12{
+            flex-flow: column wrap;
+        }
+    }
+
+    @media(min-width:1300px){
+        a .logo{
+            width: 235px;
+            height: 180px;
+        }
+        .logo {
+            width: 235px;
+            height: 180px;
+        }
+        .navbar-nav {
+            justify-content: space-around;
+        }
+        .nav-item {
+            width: 235px;
+        }
+        .nav-link {
+            font-size: 2.1rem;
+        }
+        .new {
+            .container4 {
+                flex-flow: row;
+            }
+        }
+        .ytb {
+            height: 600px;
+        }
+        fieldset {
+            height: 720px;
+        }
+        .songsBox12 {
+            flex-flow: row nowrap;
+            align-items: flex-start;
+        }
+        .songsBox13{
+            flex-flow: row nowrap;
+        }
+        .foto{
+            margin-right: 1%;
+        }
+        .playlist{
+            width: 95%;
+        }
+        .playlistContainer{
+            padding-top: 0;
+        }
+    }
+
+    @media(min-width:1600px){
+        p{
+            font-size: 20px;
+        }
+    }
