@@ -264,7 +264,7 @@ article {
 
 ## Tipografías / Fonts
 **- Barra de Navegación/NavBar: DM Serif Display, serif.**
-<p align="center"><img width="100%" src="https://i.postimg.cc/3wTNqV0m/dm-serif-display-font-large-preview.png" alt="Timeless, serif" title="Timeless, serif"></p>
+<p align="center"><img width="100%" src="https://i.postimg.cc/mDhspyj7/dm-serif-display-font-large-preview.png" alt="Timeless, serif" title="Timeless, serif"></p>
 
 **- Títulos/Headings & Párrafos/Paragraphs: Gotham, sans-serif.**
 <p align="center"><img width="100%" src="https://i.postimg.cc/8zySqFtk/Gotham-Font-768x430.webp" alt="Gotham, sans-serif" title="Gotham, sans-serif"></p>
