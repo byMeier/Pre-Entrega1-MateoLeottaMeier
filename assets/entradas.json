@@ -4,20 +4,20 @@
         "date": "Recoleta 14/01",
         "importe": 1000,
         "cargosPorServicio": 350,
-        "img": "./img/concierto1.png"
+        "img": "img/concierto1.png"
     },
     {
         "id": 1,
         "date": "Musicleta 02/02",
         "importe": 1500,
         "cargosPorServicio": 350,
-        "img": "./img/concierto2.png"
+        "img": "img/concierto2.png"
     },
     {
         "id": 2,
         "date": "Espacio Laberinto 09/04",
         "importe": 2000,
         "cargosPorServicio": 350,
-        "img": "./img/concierto3.png"
+        "img": "img/concierto3.png"
     }
 ]

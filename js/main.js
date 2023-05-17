@@ -10,7 +10,6 @@ let usuario = document.getElementById("usuario");
 const dni = document.getElementById("dni");
 let mail = document.getElementById("mail");
 const cantidad = document.getElementById("cantidad"); // Selección de cantidad de entradas.
-const enviar = document.getElementById("enviar");
 let interes = "";
 
 // Funcion constructora de objetos de entradas a los conciertos.
@@ -32,38 +31,46 @@ importeConCPS() {
 const concerts = document.getElementById("concerts");
 const entradas = [];
 
-fetch("../assets/entradas.json") // JSON con datos de cada entrada a los conciertos.
-.then((response) => response.json())
-.then((data) => {
-    data.forEach((entrada) => {
-    entradas.push(
-        new Entrada(
-            entrada.id,
-            entrada.date,
-            entrada.importe,
-            entrada.cargosPorServicio,
-            entrada.img
-        )
-    );
-});
-
-entradas.forEach((entrada) => {
-const card = document.createElement("div");
-card.innerHTML += `<img class="flyer" id="${entrada.id}" src="${entrada.img}" alt="${entrada.date}">`;
-    card.addEventListener("click", mostrarModal);
-    concerts.appendChild(card);
+function traerEntradas(){
+    fetch("../assets/entradas.json") // JSON con datos de cada entrada a los conciertos.
+    .then((response) => response.json())
+    .then((data) => {
+        data.forEach((entrada) => {
+        entradas.push(
+            new Entrada(
+                entrada.id,
+                entrada.date,
+                entrada.importe,
+                entrada.cargosPorServicio,
+                entrada.img
+            )
+        );
     });
-});
 
-function mostrarModal(e) {
-const id = parseInt(e.target.id);
-const entradaElegida = entradas.find((entrada) => entrada.id === id);
+    entradas.forEach((entrada) => {
+    const card = document.createElement("div");
+    card.innerHTML += `<a><img class="flyer" id="${entrada.id}" src="../assets/${entrada.img}" alt="${entrada.date}"></a>`;
+        card.addEventListener("click", mostrarModal);
+        concerts.appendChild(card);
+        });
+    });
 
-// Al elegir el concierto, ya se guarda y se define la elección y el precio del mismo.
-modal.showModal();
-    localStorage.setItem("concierto", entradaElegida.date);
-    localStorage.setItem("importe", entradaElegida.importe);
+    //Se nos abre un Modal para llenar el formulario de compra.
+    function mostrarModal(e) {
+    const id = parseInt(e.target.id);
+    const entradaElegida = entradas.find((entrada) => entrada.id === id);
+    // Al elegir el concierto, haciendo click sobre el ya se guarda y se define la elección y el precio del mismo.
+    modal.showModal();
+        localStorage.setItem("concierto", entradaElegida.date);
+        localStorage.setItem("importe", entradaElegida.importe);
+    }
 }
+
+traerEntradas()
+
+setInterval(() => { //Intervalo para actualizar la función y recargar el JSON que trae el FETCH por si llega a actualizarse con nuevos conciertos, sin necesidad de recargar la página.
+    traerEntradas()
+},30000)
 
 // Todo se almacena en el LocalStorage para usarlo en la pantalla final y el usuario tenga acceso a la información.
 function guardarFormulario() {
@@ -91,15 +98,33 @@ let total;
         interes = 15;
         break;
 }
-localStorage.setItem("usuario", usuario.value.trim().toUpperCase());
-localStorage.setItem("dni", dni.value.trim());
-localStorage.setItem("mail", mail.value.trim());
-localStorage.setItem("cantidad", cantidad.value);
-localStorage.setItem("total", total);
-localStorage.setItem("cuotas", cuotas);
-localStorage.setItem("CPS", cargosPorServicio);
-localStorage.setItem("valorFinal", valorFinal);
-localStorage.setItem("interes", interes);
+if(!isNaN(dni.value) && dni.value != null && dni.value != "" && dni.value.length>=7 && dni.value.length<=8 && usuario.value != "" && mail.value != ""){ //Condicional para que no se ponga cualquier número o palabra de DNI.
+    Swal.fire({
+        title: 'Error!',
+        text: 'Has ingresado el DNI incorrectamente.',
+        icon: 'error',
+        confirmButtonText: 'Intentar de Nuevo'
+    })
+    modal.close();
+    localStorage.clear();
+}
+else{
+    function redireccionar() {
+        guardarFormulario();
+        window.location.href = "gracias2.html";
+    }
+    const enviar = document.getElementById("enviar");
+    enviar.addEventListener("click", redireccionar);
+    localStorage.setItem("usuario", usuario.value.trim().toUpperCase());
+    localStorage.setItem("dni", dni.value.trim());
+    localStorage.setItem("mail", mail.value.trim());
+    localStorage.setItem("cantidad", cantidad.value);
+    localStorage.setItem("total", total);
+    localStorage.setItem("cuotas", cuotas);
+    localStorage.setItem("CPS", cargosPorServicio);
+    localStorage.setItem("valorFinal", valorFinal);
+    localStorage.setItem("interes", interes);
+}
 }
 
 // Evento para cerrar las Ventana Emergentes y limpiar el Local Storage.
@@ -108,9 +133,3 @@ closeModal.addEventListener("click", () => {
     localStorage.clear();
 });
 
-function redireccionar() {
-    guardarFormulario();
-    window.location.href = "gracias2.html";
-}
-
-enviar.addEventListener("click", redireccionar);
