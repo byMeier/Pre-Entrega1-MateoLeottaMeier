@@ -16,35 +16,31 @@ let interes = ""
 
 //Funcion constructora de objetos de entradas a los conciertos.
 cargosPorServicio = 350
-function Entrada(date, importe, img, cargosPorServicio){ 
-    this.date = date
-    this.importe = importe
-    this.img = img
-    this.importeConCPS = function (){ //Funcion dentro de funcion.
-        return this.importe + cargosPorServicio
+class Entrada {
+    constructor(date, importe, img, cargosPorServicio) {
+        this.date = date
+        this.importe = importe
+        this.img = img
+        this.importeConCPS = function () {
+            return this.importe + cargosPorServicio
+        }
     }
 }
 
 const concerts = document.getElementById("concerts")
 const entradas = [];
 
-fetch("./assets/entradas.json") //JSON con datos de cada entrada a los conciertos.
+fetch("../assets/entradas.json") //JSON con datos de cada entrada a los conciertos.
 .then(response => response.json())
 .then(data => {
-    data.forEach(Entrada => {
-        entradas.push(new Entrada(Entrada.date, Entrada.importe, Entrada.cargosPorServicio, Entrada.img))
+    data.forEach(entrada => {
+        entradas.push(new Entrada(entrada.date, entrada.importe, entrada.cargosPorServicio, entrada.img))
     })
 
-    entradas.forEach(Entrada =>{
-        concerts.innerHTML += //Ingresamos esto para que se vayan concatenando dentro del mismo contenedor y no se quede el ultimo solamente.
+    entradas.forEach(entrada =>{
+        openModal.innerHTML += //Ingresamos esto para que se vayan concatenando dentro del mismo contenedor y no se quede el ultimo solamente.
             `
-            <div class="concertImg">
-                <button id="openModal" class="popup"><img class="flyer" src="${Entrada.img}" alt="${Entrada.date}"></button>
-            </div>
-            <div>
-                <h2>${Entrada.date}</h2>
-                <h2>${Entrada.importe}</h2>
-            </div>
+            <img class="flyer" src="${entrada.img}" alt="${entrada.date}">
             `
     })//Y asi es como inyectamos en nuestro HTML todos los productos en nuestra base de datos más facilmente y optimizado.
 
