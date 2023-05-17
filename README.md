@@ -1,9 +1,9 @@
-<h1 align="center">Pre-Entrega 3 JS - Mateo Leotta Meier - Coderhouse</h1>
+<h1 align="center">Proyecto Final JS - Mateo Leotta Meier - Coderhouse</h1>
 
 ## Autor / Author - Mateo Leotta Meier
-Pre-Entrega 3 del proyecto final del curso de JavaScript de Coderhouse.
+Proyecto final del curso de JavaScript de Coderhouse.
 
-Pre-Delivery 3 of the final project of the Coderhouse JavaScript course.
+Final project of the Coderhouse JavaScript course.
 
 ## Descripción / Description
 Programa de venta de entradas, donde el precio final dependa del evento elegido, cantidad de entradas, cargos por servicio, cuantas cuotas, entre otras.

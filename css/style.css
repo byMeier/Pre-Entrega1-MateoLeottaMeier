@@ -265,7 +265,7 @@ section {
   flex-flow: row wrap;
   overflow: hidden; }
 
-.concertImg1, .concertImg2, .concertImg3 {
+.concertImg {
   width: 29%;
   overflow: hidden;
   margin: 3%; }

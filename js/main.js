@@ -14,20 +14,49 @@ const cantidad = document.getElementById("cantidad") //Selección de cantidad de
 const enviar = document.getElementById("enviar")
 let interes = ""
 
-
 //Funcion constructora de objetos de entradas a los conciertos.
 cargosPorServicio = 350
-function Entrada(date, importe, cargosPorServicio){ 
+function Entrada(date, importe, img, cargosPorServicio){ 
     this.date = date
     this.importe = importe
+    this.img = img
     this.importeConCPS = function (){ //Funcion dentro de funcion.
         return this.importe + cargosPorServicio
     }
 }
+
+const concerts = document.getElementById("concerts")
+const entradas = [];
+
+fetch("./assets/entradas.json") //JSON con datos de cada entrada a los conciertos.
+.then(response => response.json())
+.then(data => {
+    data.forEach(Entrada => {
+        entradas.push(new Entrada(Entrada.date, Entrada.importe, Entrada.cargosPorServicio, Entrada.img))
+    })
+
+    entradas.forEach(Entrada =>{
+        concerts.innerHTML += //Ingresamos esto para que se vayan concatenando dentro del mismo contenedor y no se quede el ultimo solamente.
+            `
+            <div class="concertImg">
+                <button id="openModal" class="popup"><img class="flyer" src="${Entrada.img}" alt="${Entrada.date}"></button>
+            </div>
+            <div>
+                <h2>${Entrada.date}</h2>
+                <h2>${Entrada.importe}</h2>
+            </div>
+            `
+    })//Y asi es como inyectamos en nuestro HTML todos los productos en nuestra base de datos más facilmente y optimizado.
+
+})
+
+/*
 //3 Tipos de entradas que se seleccionan desde el HTML.
 const entrada1 = new Entrada("Recoleta 14/01", 1000, cargosPorServicio) 
 const entrada2 = new Entrada("Musicleta 02/02", 1500, cargosPorServicio)
 const entrada3 = new Entrada("Espacio Laberinto 09/04", 2000, cargosPorServicio)
+*/
+
 
 //Todo se almacena en el LocalStorage para usarlo en la pantalla final y el usuario tenga acceso a la información.
 function guardarFormulario(){
@@ -71,9 +100,9 @@ closeModal.addEventListener("click",()=>{modal.close(), localStorage.clear()})
 openModal.addEventListener("click",
     function concierto1(){ 
         modal.showModal()
-        localStorage.setItem("concierto", entrada1.date)
-        localStorage.setItem("importe", entrada1.importe)
-    })
+        localStorage.setItem("concierto", Entrada.date)
+        localStorage.setItem("importe", Entrada.importe)
+    })/*
 openModal2.addEventListener("click",     
     function concierto2(){ 
         modal.showModal()
@@ -85,7 +114,7 @@ openModal3.addEventListener("click",
         modal.showModal()
         localStorage.setItem("concierto", entrada3.date)
         localStorage.setItem("importe", entrada3.importe)
-    })
+    })*/
 
     function redireccionar() {
         window.location.href = "gracias2.html";
