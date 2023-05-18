@@ -249,7 +249,7 @@ section {
   -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(202, 202, 202, 0.3);
   display: flex;
-  flex-flow: wrap nowrap;
+  flex-flow: row nowrap;
   justify-content: space-evenly;
   overflow: hidden;
   padding: 4%;
@@ -260,13 +260,30 @@ section {
   margin-top: 30px;
   width: 90%; }
 
-.concert1, .concert2, .concert3 {
+#concerts.popup {
   display: flex;
-  flex-flow: row wrap;
-  overflow: hidden; }
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  gap: 5%;
+  width: 100%; }
+
+.flyerButton {
+  width: 97%;
+  height: 97%;
+  margin: 2%;
+  display: flex;
+  background: none;
+  border: 0;
+  color: inherit;
+  line-height: normal;
+  overflow: visible; }
+
+.flyerButton:hover {
+  box-shadow: 0 0 7px black;
+  transition: 0.3s; }
 
 .concertImg {
-  width: 29%;
+  width: 100%;
   overflow: hidden;
   margin: 3%; }
 
@@ -282,7 +299,12 @@ section {
   -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(202, 202, 202, 0.3);
   margin: 5%;
-  padding: 3%; }
+  padding: 3%;
+  background: none;
+  border: 0;
+  color: inherit;
+  line-height: normal;
+  overflow: visible; }
 
 .songsBox12 {
   align-items: center; }
@@ -357,12 +379,11 @@ a {
     width: 55px;
     height: 55px;
     padding: 5%; }
-  a .popup {
-    width: 100%;
-    overflow: hidden; }
-    a .popup:hover {
-      box-shadow: 0 0 5px black;
-      transition: 0.4s; }
+
+.flyer {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; }
 
 .logo2 {
   width: 235px;
@@ -593,6 +614,10 @@ button.btn.btn-light {
 @media (min-width: 506px) {
   .info {
     height: 45px; } }
+
+@media (max-width: 665px) {
+  #concerts.popup {
+    flex-flow: column nowrap; } }
 
 @media (min-width: 665px) {
   .amuse {
