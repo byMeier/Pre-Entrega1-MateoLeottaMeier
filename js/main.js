@@ -1,6 +1,6 @@
 //Programa de venta de entradas, donde el precio final dependa del evento elegido, cantidad de entradas, cargos por servicio, cuantas cuotas, entre otras.
 
-// Variables de las Ventanas Emergentes traidas del HTML para el pedido de Entradas.
+// Variables de las Ventanas Emergentes traidas del HTML para el pedido de Entradas y el Interes de las Cuotas.
 const openModal = document.getElementById("openModal");
 const closeModal = document.getElementById("closeModal");
 const modal = document.getElementById("modal");
@@ -21,10 +21,12 @@ importeConCPS() {
     }
 }
 
+//Array y variables para traer y filtar la información de los conciertos del Json.
 const concerts = document.getElementById("concerts");
 const entradas = [];
 
-fetch("../assets/entradas.json") // JSON con datos de cada entrada a los conciertos.
+//Fetch del JSON con datos de cada entrada a los conciertos.
+fetch("../assets/entradas.json") 
 .then((response) => response.json())
 .then((data) => {
     data.forEach((entrada) => {
@@ -37,7 +39,7 @@ fetch("../assets/entradas.json") // JSON con datos de cada entrada a los concier
             entrada.img
         )
     );
-});
+});//Inyección de HTML en la página conciertos.html, para que el usuario tenga una vista gráfica para elegir satisfactoriamente.
     entradas.forEach((entrada) => {
         const card = document.createElement("div");
         card.innerHTML += `<button class="flyerButton"><img class="flyer" id="${entrada.id}" src="../assets/${entrada.img}" alt="${entrada.date}"></button>`;
@@ -50,7 +52,7 @@ fetch("../assets/entradas.json") // JSON con datos de cada entrada a los concier
 function mostrarModal(e) {
     const id = parseInt(e.target.id);
     const entradaElegida = entradas.find((entrada) => entrada.id === id);
-// Al elegir el concierto, haciendo click sobre el ya se guarda y se define la elección y el precio del mismo.
+// Al elegir el concierto, haciendo click sobre él ya se guarda y se define la elección y el precio del mismo.
     modal.showModal();
     localStorage.setItem("concierto", entradaElegida.date);
     localStorage.setItem("importe", entradaElegida.importe);
@@ -62,9 +64,9 @@ function guardarFormulario() {
 const usuario = document.getElementById("usuario");
 const dni = document.getElementById("dni");
 const mail = document.getElementById("mail");
-const cantidad = document.getElementById("cantidad"); // Selección de cantidad de entradas
+const cantidad = document.getElementById("cantidad"); // Selección de cantidad de entradas.
 
-// Validar los campos del formulario
+// Validar los campos del formulario.
 if (
     isNaN(dni.value) ||
     dni.value == null ||
@@ -74,7 +76,7 @@ if (
     usuario.value == "" ||
     mail.value == ""
 ) {
-    Swal.fire({
+    Swal.fire({ //Alerta de error con SweetAlert si se ingresan los datos incorrectamente y reinicio del localStorage.
         title: "Error!",
         text: "Has ingresado los datos incorrectamente.",
         icon: "error",
@@ -82,21 +84,21 @@ if (
     });
     modal.close();
     localStorage.clear();
-    return; // Detener la ejecución si los datos son incorrectos
+    return; // Detener la ejecución si los datos son incorrectos.
 }
 
-// Guardar los datos en el LocalStorage
+// Guardar los datos en el LocalStorage.
 localStorage.setItem("usuario", usuario.value.trim().toUpperCase());
 localStorage.setItem("dni", dni.value.trim());
 localStorage.setItem("mail", mail.value.trim());
 localStorage.setItem("cantidad", cantidad.value);
-// Calcular el valor total
+// Calcular el valor total.
 const valorEntrada = parseFloat(localStorage.getItem("importe"));
 const cantidadEntradas = parseInt(cantidad.value);
 const valorFinal = valorEntrada * cantidadEntradas + cargosPorServicio;
 const cuotas = parseInt(document.getElementById("cuotas").value);
 let total;
-switch (cuotas) {
+switch (cuotas) {//Calcular las cuotas.
     case 1:
         total = valorFinal.toFixed(2);
         interes = 0;
@@ -110,17 +112,18 @@ switch (cuotas) {
         interes = 15;
     break;
 }
-// Guardar el resto de los datos en el LocalStorage
+
+// Guardado del resto de los datos en el LocalStorage.
 localStorage.setItem("total", total);
 localStorage.setItem("cuotas", cuotas);
 localStorage.setItem("CPS", cargosPorServicio);
 localStorage.setItem("valorFinal", valorFinal);
 localStorage.setItem("interes", interes);
-// Redireccionar a la página de agradecimiento
+// Redireccion a la página de agradecimiento.
 window.location.href = "gracias2.html";
 }
 
-// Evento para cerrar las Ventana Emergentes y limpiar el LocalStorage.
+//Evento para cerrar las Ventana Emergentes y limpiar el LocalStorage.
 closeModal.addEventListener("click", () => {
 modal.close();
 localStorage.clear();

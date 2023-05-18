@@ -452,8 +452,9 @@ h3 {
   font-size: 15px;
   text-align: justify; }
 
-.butonCompra {
-  margin: auto; }
+#finalizar {
+  width: 15%;
+  margin-left: 2%; }
 
 .recibo {
   padding: 1%;
@@ -722,6 +723,16 @@ button.btn.btn-light {
     font-size: 40px; }
   .playlistContainer {
     padding-top: 3%; } }
+
+@media (max-width: 1260px) {
+  #finalizar {
+    width: 40%;
+    margin-left: 2%; } }
+
+@media (max-width: 630px) {
+  #finalizar {
+    width: 60%;
+    margin-left: 2%; } }
 
 @media (min-width: 1218px) {
   fieldset {

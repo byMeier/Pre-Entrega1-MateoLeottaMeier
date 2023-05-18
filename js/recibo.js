@@ -9,3 +9,13 @@ contenedor.innerHTML =
 <h3 class="recibo"><strong> CARGOS POR SERVICIO: </strong>$`+ localStorage.getItem("CPS") +` </h3>
 <h3 class="recibo"><strong> VALOR FINAL: </strong>$`+ localStorage.getItem("valorFinal") +` </h3>
 <h3 class="recibo"><strong> TOTAL A PAGAR: </strong>$`+ localStorage.getItem("total") +` en `+ localStorage.getItem("cuotas") +` cuotas con un `+ localStorage.getItem("interes") + `% de interes.</h3>`
+
+const finalizar = document.getElementById("finalizar")
+finalizar.addEventListener("click", () => {
+    Swal.fire({
+        title: 'Muchas Gracias!',
+        text: 'Este recibo le llegara al mail junto a la factura de compra.',
+        icon: 'success',
+        confirmButtonText: 'OK'
+    })
+    });
