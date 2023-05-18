@@ -287,9 +287,16 @@ section {
   overflow: hidden;
   margin: 3%; }
 
-.concertData1, .concertData2, .concertData3 {
+.concertData1 {
   width: 65%;
-  overflow: hidden; }
+  overflow: hidden;
+  border: none;
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(202, 202, 202, 0.3);
+  margin: auto; }
 
 .concerts {
   background: rgba(202, 202, 202, 0.5);
@@ -298,10 +305,8 @@ section {
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(202, 202, 202, 0.3);
-  margin: 5%;
   padding: 3%;
-  background: none;
-  border: 0;
+  text-decoration: none;
   color: inherit;
   line-height: normal;
   overflow: visible; }
@@ -447,6 +452,13 @@ h3 {
   font-size: 15px;
   text-align: justify; }
 
+.butonCompra {
+  margin: auto; }
+
+.recibo {
+  padding: 1%;
+  margin: 1%; }
+
 fieldset {
   background: rgba(202, 202, 202, 0.5);
   border-radius: 16px;
@@ -492,6 +504,18 @@ input {
   font-size: 15px;
   font-weight: lighter;
   padding: 1%; }
+
+select {
+  width: 100%;
+  margin: 1%;
+  font-family: "Raleway", sans-serif;
+  font-size: 15px;
+  font-weight: lighter;
+  padding: 1%; }
+
+#closeModal.button, #enviar.button {
+  margin-left: 4.5%;
+  margin-right: 4.5%; }
 
 form .button {
   width: 40%;
